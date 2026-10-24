@@ -1,6 +1,44 @@
-- title: Computer vision & generative AI pipelines
-  url: https://github.com/doguscank/gen-ai
-  description: Configurable Python integrations for image understanding, segmentation, generation, and inpainting, using Florence-2, SAM 2, and Stable Diffusion.
-- title: Paper Organizer
-  url: https://github.com/doguscank/paper-organizer
-  description: A desktop application for organizing and retrieving research papers with categorization, summaries, and semantic search, using SciBERT embeddings and FAISS.
+- title: Real-time robot perception
+  category: DEPLOYED PERCEPTION
+  url: /projects/#robot-perception
+  description: PIDNet semantic segmentation deployed on NVIDIA Jetson Xavier across 20+ autonomous delivery robots. CPU and GPU pipeline optimization brought segmentation to 8 FPS on that hardware.
+  link_label: EXPLORE THE WORK
+  diagram: |-
+     CAMERA → SEGMENT → NAVIGATE
+     ┌────────┐     ┌────────┐
+     │ ░▒▓ ░▒ │ ──→ │ ROAD ▓ │
+     │ ▓░▒▓ ░ │     │ ▓ PATH │
+     └────────┘     └────────┘
+- title: Human-in-the-loop auto-labeling
+  category: VISION + DATA SYSTEMS
+  url: /projects/#auto-labeling
+  description: An internal annotation system at DELIVERS.AI combining automatic bounding boxes and segmentation masks with human review. I designed the full system and workflow; it was actively used for two years.
+  link_label: EXPLORE THE WORK
+  diagram: |-
+     IMAGE → BOXES + MASKS
+                │
+           HUMAN REVIEW
+                │
+           CORRECTED LABELS
+- title: Multimodal product understanding
+  category: VISUAL REPRESENTATIONS
+  url: /projects/#multimodal-products
+  description: Combined Turkish-text and DINOv2 image embeddings for product classification and concept clustering. Compared fusion strategies, reaching 73.44% validation accuracy with AutoGluon.
+  link_label: EXPLORE THE WORK
+  diagram: |-
+     IMAGE ──┐
+             ├──→ EMBEDDINGS
+     TEXT ───┘        │
+                 CLASSIFY
+                    + CLUSTER
+- title: Multi-agent Text-to-SQL
+  category: AGENTS + APPLICATIONS
+  url: /projects/#text-to-sql
+  description: A full-stack application with separate agents for question decomposition, SQL generation, and result synthesis. Built with a FastAPI backend, React interface, and SQLite queries.
+  link_label: EXPLORE THE WORK
+  diagram: |-
+     QUESTION → DECOMPOSE
+                    │
+              GENERATE SQL
+                    │
+     ANSWER ← QUERY + SYNTHESIZE

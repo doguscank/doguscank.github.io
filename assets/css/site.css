@@ -820,3 +820,16 @@ summary:focus-visible {
     transition: none !important;
   }
 }
+
+.work-repositories {
+  margin: 24px 0 0;
+  color: var(--muted);
+  font: 12px/2 var(--mono);
+}
+.work-repositories a {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.work-repositories span {
+  margin: 0 8px;
+}
