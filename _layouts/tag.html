@@ -1,0 +1,5 @@
+---
+layout: page
+---
+{% assign entries = site.tags[page.title] | sort: 'date' | reverse %}
+{% for entry in entries %}<p><a href="{{ entry.url | relative_url }}">{{ entry.title }}</a></p>{% endfor %}

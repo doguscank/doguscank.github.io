@@ -1,0 +1,20 @@
+{% assign articles = site.posts | sort: 'date' | reverse %}
+<div id="post-list">
+{% for post in articles %}
+  <article class="card-wrapper card mb-4">
+    <a class="post-preview" href="{{ post.url | relative_url }}">
+      <div class="card-body">
+        <h2 class="card-title h4">{{ post.title | escape }}</h2>
+        <p class="card-text">{{ post.description | escape }}</p>
+        <div class="post-meta text-muted"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%b %-d, %Y' }}</time>{% for category in post.categories %}<span class="ms-3">{{ category | escape }}</span>{% endfor %}</div>
+      </div>
+    </a>
+  </article>
+{% else %}
+  <div class="empty-state content">
+    <h3 class="h5">No articles published yet</h3>
+    <p>Future articles will explore concrete problems, evidence and limitations in AI engineering.</p>
+    <a href="{{ '/about/' | relative_url }}">About Doğuş →</a>
+  </div>
+{% endfor %}
+</div>

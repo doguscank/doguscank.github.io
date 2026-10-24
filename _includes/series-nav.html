@@ -1,0 +1,18 @@
+{% assign series = site.data.series[page.series] %}
+{% if series and series.published == true %}
+{% assign chapters = site.posts | where: 'series', page.series | sort: 'series_order' %}
+<nav class="series-navigation my-4 p-3" aria-label="Series chapters">
+  <p><strong>Series: <a href="{{ series.url | relative_url }}">{{ series.title | escape }}</a></strong></p>
+  <ol>
+  {% for chapter in chapters %}
+    <li>{% if chapter.url == page.url %}<span aria-current="page">{{ chapter.title | escape }}</span>{% else %}<a href="{{ chapter.url | relative_url }}">{{ chapter.title | escape }}</a>{% endif %}</li>
+  {% endfor %}
+  </ol>
+  {% for chapter in chapters %}
+    {% if chapter.url == page.url %}
+      {% unless forloop.first %}{% assign previous_index = forloop.index0 | minus: 1 %}<a class="me-3" rel="prev" href="{{ chapters[previous_index].url | relative_url }}">← Previous chapter</a>{% endunless %}
+      {% unless forloop.last %}{% assign next_index = forloop.index0 | plus: 1 %}<a rel="next" href="{{ chapters[next_index].url | relative_url }}">Next chapter →</a>{% endunless %}
+    {% endif %}
+  {% endfor %}
+</nav>
+{% endif %}

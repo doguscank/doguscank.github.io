@@ -1,0 +1,4 @@
+---
+layout: page
+---
+{% for tag in site.tags %}<p><a href="{{ site.baseurl }}/tags/{{ tag[0] | slugify }}/">{{ tag[0] }}</a></p>{% else %}<p>No tags yet.</p>{% endfor %}
