@@ -1,61 +1,30 @@
 (() => {
   const art = document.getElementById('ascii-art');
-  if (art && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    const width = 70,
-      height = 36,
-      ramp = ' .,:;irsXA253hMHGS#9B&@';
-    let angle = 0,
-      last = 0,
-      visible = true,
-      pointer = 0;
-    new IntersectionObserver((entries) => {
-      visible = entries[0].isIntersecting;
+  if (art) {
+    const template = art.textContent;
+    const motion = matchMedia('(prefers-reduced-motion: reduce)');
+    const stages = [
+      ['PLANNER AGENT', 'PLANNING THE TASK'],
+      ['RESEARCH AGENT', 'GATHERING CONTEXT'],
+      ['CODE AGENT', 'WORKING WITH TOOLS'],
+      ['REVIEWER AGENT', 'REVIEWING THE RESULT'],
+      ['FINAL RESPONSE', 'RESPONSE READY'],
+    ];
+    let step = 0;
+    let visible = true;
+    const reset = () => { art.textContent = template; };
+    motion.addEventListener('change', reset);
+    new IntersectionObserver(([entry]) => {
+      visible = entry.isIntersecting;
     }).observe(art);
-    art.parentElement.addEventListener('pointermove', (event) => {
-      const box = art.getBoundingClientRect();
-      pointer = ((event.clientX - box.left) / box.width - 0.5) * 0.5;
-    });
-    function render(time) {
-      requestAnimationFrame(render);
-      if (!visible || document.hidden || time - last < 90) return;
-      last = time;
-      angle += 0.012;
-      const cells = Array(width * height).fill(' '),
-        depths = Array(width * height).fill(-100);
-      const spin = angle + pointer,
-        ca = Math.cos(spin),
-        sa = Math.sin(spin);
-      for (let v = 0; v < Math.PI; v += 0.035)
-        for (let u = 0; u < Math.PI * 2; u += 0.035) {
-          const radius =
-            1 + 0.13 * Math.sin(6 * u + angle * 2) * Math.sin(4 * v);
-          let x = radius * Math.sin(v) * Math.cos(u),
-            y = radius * Math.cos(v),
-            z = radius * Math.sin(v) * Math.sin(u);
-          const xx = x * ca + z * sa,
-            zz = -x * sa + z * ca;
-          const yy = y * 0.94 - zz * 0.34,
-            depth = y * 0.34 + zz * 0.94;
-          const scale = 1 / (3.8 - depth);
-          const col = Math.floor(width / 2 + xx * scale * 82),
-            row = Math.floor(height / 2 + yy * scale * 39);
-          if (col < 0 || col >= width || row < 0 || row >= height) continue;
-          const index = row * width + col;
-          if (depth > depths[index]) {
-            depths[index] = depth;
-            const light = Math.max(
-              0.08,
-              Math.min(1, 0.34 + depth * 0.38 - yy * 0.3 + xx * 0.1),
-            );
-            cells[index] = ramp[Math.floor(light * (ramp.length - 1))];
-          }
-        }
-      let result = '';
-      for (let row = 0; row < height; row++)
-        result += cells.slice(row * width, (row + 1) * width).join('') + '\n';
-      art.textContent = result;
-    }
-    requestAnimationFrame(render);
+    setInterval(() => {
+      if (motion.matches || !visible || document.hidden) return;
+      const [label, status] = stages[step % stages.length];
+      art.textContent = template
+        .replace(' ' + label, '>' + label)
+        .replace('READY FOR THE NEXT TASK', status);
+      step++;
+    }, 1600);
   }
   const toc = document.getElementById('article-toc');
   if (toc)

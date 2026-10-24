@@ -1,0 +1,29 @@
+                  USER TASK
+                      │
+                      ▼
+           ┌─────────────────────┐
+           │   PLANNER AGENT     │
+           │   break down task   │
+           └──────────┬──────────┘
+                      │
+          ┌───────────┴───────────┐
+          ▼                       ▼
+ ┌─────────────────┐   ┌─────────────────┐
+ │ RESEARCH AGENT  │   │   CODE AGENT    │
+ │ search · read   │   │ build · execute │
+ └────────┬────────┘   └────────┬────────┘
+          │                       │
+          ▼                       ▼
+     [ KNOWLEDGE ]            [ TOOLS ]
+          │                       │
+          └───────────┬───────────┘
+                      ▼
+           ┌─────────────────────┐
+           │   REVIEWER AGENT    │
+           │   check · refine    │
+           └──────────┬──────────┘
+                      │
+                      ▼
+                FINAL RESPONSE
+
+           > READY FOR THE NEXT TASK
