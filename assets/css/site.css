@@ -196,8 +196,8 @@ summary:focus-visible {
   border-bottom: 1px solid var(--line);
 }
 #ascii-art {
-  font: clamp(7px, 0.82vw, 12px) / 1.35 var(--mono);
-  letter-spacing: 0.12em;
+  font: clamp(5px, 0.68vw, 9px) / 1.3 var(--mono);
+  letter-spacing: 0;
   white-space: pre;
   overflow: hidden;
   text-align: center;
@@ -279,6 +279,7 @@ summary:focus-visible {
   gap: 20px;
 }
 .project-card {
+  min-width: 0;
   padding: 28px;
   border: 1px solid var(--line);
   background: var(--panel);
@@ -707,8 +708,8 @@ summary:focus-visible {
     margin-top: 10px;
   }
   #ascii-art {
-    font-size: 9px;
-    min-height: 360px;
+    font-size: clamp(5px, 1.25vw, 8px);
+    min-height: 280px;
     margin: 10px 0;
   }
   .panel-top,

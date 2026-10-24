@@ -1,29 +1,44 @@
-                  USER TASK
-                      │
-                      ▼
-           ┌─────────────────────┐
-           │   PLANNER AGENT     │
-           │   break down task   │
-           └──────────┬──────────┘
-                      │
-          ┌───────────┴───────────┐
-          ▼                       ▼
- ┌─────────────────┐   ┌─────────────────┐
- │ RESEARCH AGENT  │   │   CODE AGENT    │
- │ search · read   │   │ build · execute │
- └────────┬────────┘   └────────┬────────┘
-          │                       │
-          ▼                       ▼
-     [ KNOWLEDGE ]            [ TOOLS ]
-          │                       │
-          └───────────┬───────────┘
-                      ▼
-           ┌─────────────────────┐
-           │   REVIEWER AGENT    │
-           │   check · refine    │
-           └──────────┬──────────┘
-                      │
-                      ▼
-                FINAL RESPONSE
+                                                                                    .
+                                      .                      .
+               .                                                                .
+                                  .                      .
+           .
 
-           > READY FOR THE NEXT TASK
+
+
+                                                                   .SSG,
+                                                                  M#9#Gh
+                                                iMHhr.             3MM3A
+                                              .S#99#SGM5.
+                    ;;;;;;;;                  ,G##9##GHhX
+              .   ;;.3SSG3.;;;                .MGSSSGMh2.
+                 ; ;S#99#SH3.;;                .3hMh32: .                      .
+          .     ;;.G##99#SGM5.;  .               ...
+                ;;sGSS#SSGHh5:;                     .                      .
+      .          ;.hMHHMMh32i;;
+                  ;;;:ii:..;;;                  .                      .
+                    ;;;;;;;;
+
+
+
+                                         H#SGh                   ..
+                                        :S##SH5             .MS##SSHh.
+                                         AMMhA             :S#999#SGMA
+                                                           .HSS##SGM3i
+                                                            .3MHHMM3A.
+                         ;S#SG3.                              .i22X,
+     .                  ,S#99#SH3.                                    .
+                        XG###SGH3s             .
+ .                      ,MHGHMh5X.                                .
+                    .    .r2Ai.            .
+                                                        .S##SSH2                     .
+                                                        H#99#SHh,
+                                                        .MGGGHhX
+                                                          X552,
+
+
+
+
+
+
+                                          .                      .

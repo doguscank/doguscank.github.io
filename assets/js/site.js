@@ -1,31 +1,4 @@
 (() => {
-  const art = document.getElementById('ascii-art');
-  if (art) {
-    const template = art.textContent;
-    const motion = matchMedia('(prefers-reduced-motion: reduce)');
-    const stages = [
-      ['PLANNER AGENT', 'PLANNING THE TASK'],
-      ['RESEARCH AGENT', 'GATHERING CONTEXT'],
-      ['CODE AGENT', 'WORKING WITH TOOLS'],
-      ['REVIEWER AGENT', 'REVIEWING THE RESULT'],
-      ['FINAL RESPONSE', 'RESPONSE READY'],
-    ];
-    let step = 0;
-    let visible = true;
-    const reset = () => { art.textContent = template; };
-    motion.addEventListener('change', reset);
-    new IntersectionObserver(([entry]) => {
-      visible = entry.isIntersecting;
-    }).observe(art);
-    setInterval(() => {
-      if (motion.matches || !visible || document.hidden) return;
-      const [label, status] = stages[step % stages.length];
-      art.textContent = template
-        .replace(' ' + label, '>' + label)
-        .replace('READY FOR THE NEXT TASK', status);
-      step++;
-    }, 1600);
-  }
   const toc = document.getElementById('article-toc');
   if (toc)
     document

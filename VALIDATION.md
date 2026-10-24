@@ -99,3 +99,19 @@ The QA article screenshots show synthetic rendering fixtures, not public content
   are optional future inputs and do not block this empty-library version.
 - Browser dependencies use the theme's versioned CDNs; offline rendering was not
   an acceptance target. No unlicensed research assets were downloaded or reused.
+
+## Agent swarm revision
+
+The homepage renders a procedural ASCII ecology with seven independently drifting,
+breathing bodies, curved signal packets, expanding ripples, a merging pair, and
+staggered dissolution and re-formation. A generated static frame is included in
+the HTML. The animation uses no external dependencies, runs at roughly 12 FPS,
+and pauses offscreen or while the document is hidden. Reduced-motion preferences
+are respected on load and when changed during a visit.
+
+Validation: production Jekyll build and HTML-Proofer pass; browser checks at 320,
+375, 768, 1050, and 1440 pixels show no page overflow or clipped swarm. Animation,
+offscreen pause, and reduced-motion behavior pass. Homepage axe WCAG A/AA checks
+report no violations and no JavaScript errors were observed. Two simulated
+38-second lifecycle cycles preserve the character grid; merging, disappearance,
+and re-formation states were checked. Desktop and mobile screenshots were reviewed.
