@@ -834,3 +834,25 @@ summary:focus-visible {
 .work-repositories span {
   margin: 0 8px;
 }
+
+/* Reserve the same stage for all three randomly selected studies. */
+#ascii-art {
+  height: 520px;
+  min-height: 0;
+}
+#ascii-art[data-variant="sculpture"] {
+  font-size: clamp(6px, 0.85vw, 12px);
+  line-height: 1.15;
+}
+#ascii-art[data-variant="flow"] {
+  font-size: clamp(8px, 0.85vw, 12px);
+  line-height: 1.2;
+}
+@media (max-width: 1050px) {
+  #ascii-art { height: 420px; }
+}
+@media (max-width: 700px) {
+  #ascii-art { height: clamp(320px, 72vw, 460px); }
+  #ascii-art[data-variant="sculpture"] { font-size: clamp(5px, 1.45vw, 7.5px); }
+  #ascii-art[data-variant="flow"] { font-size: clamp(8px, 2.4vw, 9px); }
+}

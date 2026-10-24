@@ -1,6 +1,6 @@
 (() => {
   const art = document.getElementById('ascii-art');
-  if (!art) return;
+  if (!art || art.dataset.variant !== 'swarm') return;
 
   // The same deterministic field supplies the animated and reduced-motion views.
   // Coordinates use character-width units; vertical distance is aspect-corrected.

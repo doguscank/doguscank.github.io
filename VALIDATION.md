@@ -115,3 +115,17 @@ offscreen pause, and reduced-motion behavior pass. Homepage axe WCAG A/AA checks
 report no violations and no JavaScript errors were observed. Two simulated
 38-second lifecycle cycles preserve the character grid; merging, disappearance,
 and re-formation states were checked. Desktop and mobile screenshots were reviewed.
+
+## Random ASCII gallery revision
+
+Each homepage load independently selects one of three studies: 001 Latent
+Geometry (the original sculpture), 002 Agent Orchestration (the agent flow),
+or 003 Agent Ecology (the swarm). Titles, captions, accessible descriptions,
+and animation all follow the selected study. Only the selected renderer runs;
+the stage reserves the same height for every variant at a given viewport.
+Without JavaScript, the original sculpture remains visible.
+
+Production build and internal-link checks pass. Each variant was checked at
+320, 375, 700, 768, 1050, and 1440 pixels for page overflow and clipped artwork,
+plus animation, reduced motion, JavaScript errors, and axe WCAG A/AA checks.
+Repeated unmodified page loads exercised all three random selections.

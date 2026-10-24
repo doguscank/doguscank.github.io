@@ -8,7 +8,7 @@
   <link rel="icon" href="{{ '/assets/img/handle.svg' | relative_url }}" type="image/svg+xml">
   <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
   <link rel="alternate" type="application/atom+xml" href="{{ '/feed.xml' | relative_url }}" title="{{ site.title }}">
-  {% if page.layout == 'home' %}<script defer src="{{ '/assets/js/ascii-swarm.js' | relative_url }}"></script>{% endif %}
+  {% if page.layout == 'home' %}<script defer src="{{ '/assets/js/ascii-gallery.js' | relative_url }}"></script><script defer src="{{ '/assets/js/ascii-swarm.js' | relative_url }}"></script>{% endif %}
   <script defer src="{{ '/assets/js/site.js' | relative_url }}"></script>
   {% if page.math %}<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>{% endif %}
   {% if page.mermaid %}<script type="module">import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs'; mermaid.initialize({startOnLoad:false,theme:'dark'});document.querySelectorAll('pre code.language-mermaid').forEach(code=>{const diagram=document.createElement('div');diagram.className='mermaid';diagram.textContent=code.textContent;code.parentElement.replaceWith(diagram)});mermaid.run();</script>{% endif %}
