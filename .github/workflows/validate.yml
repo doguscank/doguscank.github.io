@@ -1,0 +1,27 @@
+name: Validate site
+on:
+  pull_request:
+  push:
+    branches: [main, master, 'feat/**']
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: .ruby-version
+          bundler-cache: true
+      - name: Build production site
+        run: bundle exec jekyll build
+        env:
+          JEKYLL_ENV: production
+      - name: Check internal links and images
+        run: bundle exec htmlproofer _site --disable-external
+      - name: Save review preview
+        uses: actions/upload-artifact@v4
+        with:
+          name: site-preview
+          path: _site

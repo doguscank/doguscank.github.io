@@ -1,0 +1,4 @@
+---
+layout: page
+---
+{% for category in site.categories %}<p><a href="{{ site.baseurl }}/categories/{{ category[0] | slugify }}/">{{ category[0] }}</a></p>{% else %}<p>No categories yet.</p>{% endfor %}

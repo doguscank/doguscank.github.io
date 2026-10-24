@@ -1,0 +1,6 @@
+# This registry contains metadata only. Keep unapproved prose outside Git.
+# To publish a landing page, approve its introduction, then set published: true.
+domain-adaptation:
+  title: Domain adaptation
+  url: /series/domain-adaptation/
+  published: false

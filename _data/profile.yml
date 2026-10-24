@@ -1,0 +1,6 @@
+headline: AI Engineer · Computer Vision & Multimodal AI
+supporting_line: I build computer vision and multimodal AI systems, and research how visual representations transfer across domains.
+introduction: >-
+  I'm Doğuş Can Korkmaz, an AI engineer working across computer vision, multimodal AI, and agentic systems. My experience spans video production, document understanding, and perception for autonomous delivery robots. I also research domain adaptation for semantic segmentation at Istanbul Technical University.
+research: >-
+  My research focuses on feature-space domain adaptation for semantic segmentation. At ITU's Visual Perception Research Group, I explore transfer from synthetic GTA V imagery to real-world Cityscapes scenes and the alignment of visual foundation-model features. This work is supervised by Assoc. Prof. Cihan Topal.

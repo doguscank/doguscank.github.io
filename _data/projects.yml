@@ -1,0 +1,6 @@
+- title: Computer vision & generative AI pipelines
+  url: https://github.com/doguscank/gen-ai
+  description: Configurable Python integrations for image understanding, segmentation, generation, and inpainting, using Florence-2, SAM 2, and Stable Diffusion.
+- title: Paper Organizer
+  url: https://github.com/doguscank/paper-organizer
+  description: A desktop application for organizing and retrieving research papers with categorization, summaries, and semantic search, using SciBERT embeddings and FAISS.
