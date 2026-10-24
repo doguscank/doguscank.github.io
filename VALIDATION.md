@@ -42,7 +42,7 @@ All eight page/mode combinations passed axe WCAG A/AA checks after the revision.
   sitemap, canonical metadata and native search.
 - One reverse-chronological source for Home and Articles; clean empty state and
   no articles, invented publication dates or sample research content.
-- Approved identity and bio facts, initials favicon and social profiles; LinkedIn
+- Approved identity and bio facts, handle favicon and social profiles; LinkedIn
   contact. Employer and education details are now approved by the content source;
   no public email or portrait was added.
 - Native article layout with shared author/discussion/RSS footer and reusable
